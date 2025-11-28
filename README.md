@@ -204,9 +204,9 @@
           <p>Environment props and textures; contributed mood pieces and banners used during the event.</p>
         </div>
 
-        <div class="card" role="listitem" tabindex="0" data-id="tomato-works" aria-label="Open Tomato Works project">
-          <div class="thumb"><img src="assets/tomato-works-1.png" alt="Tomato Works — preview"></div>
-          <h4>Tomato Works — Lead Artist (2023)</h4>
+        <div class="card" role="listitem" tabindex="0" data-id="minatamis" aria-label="Open Minatamis project">
+          <div class="thumb"><img src="assets/minatamis-1.png" alt="minatamis — preview"></div>
+          <h4>Minatamis — Lead Artist (2023)</h4>
           <p>Led art direction, asset pipeline and level visuals. Focus on readable silhouette and color language.</p>
         </div>
 
@@ -307,16 +307,20 @@
           ],
           description: "Environment props and textures; contributed mood pieces and banners used during the event."
         },
-        "tomato-works": {
-          title: "Tomato Works",
+        "minatamis": {
+          title: "Minatamis",
           role: "Lead Artist",
           year: "2023",
           tools: "Blender, Unity, Substance",
           gallery: [
-            "assets/tomato-works-1.png",
-            "assets/tomato-works-2.png",
-            "assets/tomato-works-3.png",
-            "assets/tomato-works-4.png"
+            "assets/minatamis-1.png",
+            "assets/minatamis-2.png",
+            "assets/minatamis-3.png",
+            "assets/minatamis-4.png",
+             "assets/minatamis-5.png",
+            "assets/minatamis-6.png",
+            "assets/minatamis-7.png",
+            "assets/minatamis-8.png"
           ],
           description: "Led art direction, asset pipeline and level visuals. Focus on readable silhouette and color language."
         },
