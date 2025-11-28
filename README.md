@@ -204,9 +204,9 @@
           <p>Environment props and textures; contributed mood pieces and banners used during the event.</p>
         </div>
 
-        <div class="card" role="listitem" tabindex="0" data-id="tomato-works" aria-label="Open Tomato Works project">
-          <div class="thumb"><img src="assets/tomato-works-1.png" alt="Tomato Works — preview"></div>
-          <h4>Tomato Works — Lead Artist (2023)</h4>
+         <div class="card" role="listitem" tabindex="0" data-id="tomato-works" aria-label="Open Minatamis project">
+          <div class="thumb"><img src="assets/tomato-works-1.png" alt="Minatamis — preview"></div>
+          <h4>Minatamis — Lead Artist, 3D Modeler, Texture Artist (2023)</h4>
           <p>Led art direction, asset pipeline and level visuals. Focus on readable silhouette and color language.</p>
         </div>
 
