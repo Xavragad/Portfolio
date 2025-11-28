@@ -319,16 +319,18 @@
           ],
           description: "Environment props and textures; contributed mood pieces and banners used during the event."
         },
-        "tomato-works": {
-          title: "Tomato Works",
+        "Minatamis": {
+          title: "Minatamis",
           role: "Lead Artist",
-          year: "2023",
+          year: "2025",
           tools: "Blender, Unity, Substance",
           gallery: [
             "assets/tomato-works-1.png",
             "assets/tomato-works-2.png",
             "assets/tomato-works-3.png",
-            "assets/tomato-works-4.png"
+            "assets/tomato-works-4.png",
+            "assets/tomato-works-5.png",
+            "assets/tomato-works-6.png"
           ],
           description: "Led art direction, asset pipeline and level visuals. Focus on readable silhouette and color language."
         },
