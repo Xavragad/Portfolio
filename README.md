@@ -228,12 +228,6 @@
           <p>Collection of rigs, PBR textures and props for environment kits and quick prototyping.</p>
         </div>
 
-        <div class="card" role="listitem" tabindex="0" data-id="personal-demos" aria-label="Open Personal Demos project">
-          <div class="thumb"><img src="assets/personal-demos-1.png" alt="Personal demos — preview"></div>
-          <h4>Personal Demos</h4>
-          <p>Small Unity prototypes exploring narrative tools, lighting setups and locomotion mechanics.</p>
-        </div>
-
         <div class="card" role="listitem" tabindex="0" data-id="pixel-z" aria-label="Open Pixel Z project">
           <div class="thumb"><img src="assets/pixel-z-1.png" alt="Pixel Z — preview"></div>
           <h4>Pixel Z — Full Stack (2025)</h4>
