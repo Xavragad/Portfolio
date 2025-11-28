@@ -199,14 +199,14 @@
 
       <div class="grid" role="list">
         <div class="card" role="listitem" tabindex="0" data-id="darkons" aria-label="Open Darkon's Madness project">
-          <div class="thumb"><img src="https://scontent.fmnl8-5.fna.fbcdn.net/v/t39.30808-6/480301141_9279944875455896_5586049436356959454_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=86c6b0&_nc_eui2=AeGXtevPeRBzpNdBDueg6y3kJu0rJJOujLgm7Sskk66MuEi62TMhcBydNnzVenZoK04f3EUI44ZCDacccP0CgQcF&_nc_ohc=CT2Yo-8Qoz4Q7kNvwH3L0re&_nc_oc=AdllvDE84_LpZJF4n_STFWwKM8A5Sh0jR2H6otpMCgZ797sPT6BnTzumc9YkMAbAwjundPH9B6TlcPZQwe-fIkDV&_nc_zt=23&_nc_ht=scontent.fmnl8-5.fna&_nc_gid=RhwNBnzG8DEGpyP17hJGkQ&oh=00_AfjkwPuI81Qvpc_KYWRz6oYHLofEILpzi-HFoId5zL16Fg&oe=692EF8B8" alt="Darkon's Madness — preview"></div>
+          <div class="thumb"><img src="assets/darkons-1.png" alt="Darkon's Madness — preview"></div>
           <h4>Darkon's Madness — Guest Artist (2019)</h4>
           <p>Environment props and textures; contributed mood pieces and banners used during the event.</p>
         </div>
 
-         <div class="card" role="listitem" tabindex="0" data-id="Minatamis" aria-label="Open Minatamis project">
-          <div class="thumb"><img src="assets/Minatamis-1.png" alt="Minatamis — preview"></div>
-          <h4>Minatamis — Lead Artist, 3D Modeler, Texture Artist (2023)</h4>
+        <div class="card" role="listitem" tabindex="0" data-id="tomato-works" aria-label="Open Tomato Works project">
+          <div class="thumb"><img src="assets/tomato-works-1.png" alt="Tomato Works — preview"></div>
+          <h4>Tomato Works — Lead Artist (2023)</h4>
           <p>Led art direction, asset pipeline and level visuals. Focus on readable silhouette and color language.</p>
         </div>
 
@@ -214,18 +214,6 @@
           <div class="thumb"><img src="assets/pixel-canopy-1.png" alt="Pixel Canopy — preview"></div>
           <h4>Pixel Canopy — Back End Dev (2025)</h4>
           <p>Server-side tooling and content pipelines to support live services and asset distribution.</p>
-        </div>
-
-        <div class="card" role="listitem" tabindex="0" data-id="pixel-z" aria-label="Open Pixel Z project">
-          <div class="thumb"><img src="assets/pixel-z-1.png" alt="Pixel Z — preview"></div>
-          <h4>Pixel Z — Full Stack (2025)</h4>
-          <p>Web portal for analytics and content management with dashboard visualizations.</p>
-        </div>
-
-        <div class="card" role="listitem" tabindex="0" data-id="asset-pack" aria-label="Open 3D Asset Pack project">
-          <div class="thumb"><img src="assets/asset-pack-1.png" alt="3D Asset Pack — preview"></div>
-          <h4>3D Asset Pack (2024)</h4>
-          <p>Collection of rigs, PBR textures and props for environment kits and quick prototyping.</p>
         </div>
 
         <div class="card" role="listitem" tabindex="0" data-id="pixel-z" aria-label="Open Pixel Z project">
@@ -278,7 +266,7 @@
       <button class="modal-close" aria-label="Close project (Esc)">✕</button>
       <div class="modal-body">
         <div class="modal-media" aria-live="polite">
-          <img id="modal-image" src="https://scontent.fmnl8-5.fna.fbcdn.net/v/t39.30808-6/480301141_9279944875455896_5586049436356959454_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=86c6b0&_nc_eui2=AeGXtevPeRBzpNdBDueg6y3kJu0rJJOujLgm7Sskk66MuEi62TMhcBydNnzVenZoK04f3EUI44ZCDacccP0CgQcF&_nc_ohc=CT2Yo-8Qoz4Q7kNvwH3L0re&_nc_oc=AdllvDE84_LpZJF4n_STFWwKM8A5Sh0jR2H6otpMCgZ797sPT6BnTzumc9YkMAbAwjundPH9B6TlcPZQwe-fIkDV&_nc_zt=23&_nc_ht=scontent.fmnl8-5.fna&_nc_gid=RhwNBnzG8DEGpyP17hJGkQ&oh=00_AfjkwPuI81Qvpc_KYWRz6oYHLofEILpzi-HFoId5zL16Fg&oe=692EF8B8" alt="">
+          <img id="modal-image" src="assets/darkons-1.png" alt="">
           <div class="modal-gallery" id="modal-gallery" role="listbox" aria-label="Project gallery"></div>
         </div>
         <div class="modal-info">
@@ -319,18 +307,16 @@
           ],
           description: "Environment props and textures; contributed mood pieces and banners used during the event."
         },
-        "Minatamis": {
-          title: "Minatamis",
+        "tomato-works": {
+          title: "Tomato Works",
           role: "Lead Artist",
-          year: "2025",
+          year: "2023",
           tools: "Blender, Unity, Substance",
           gallery: [
-            "assets/Minatamis-1.png",
-            "assets/Minatamis-2.png",
-            "assets/Minatamis-3.png",
-            "assets/Minatamis-4.png",
-            "assets/Minatamis-5.png",
-            "assets/Minatamis-6.png"
+            "assets/tomato-works-1.png",
+            "assets/tomato-works-2.png",
+            "assets/tomato-works-3.png",
+            "assets/tomato-works-4.png"
           ],
           description: "Led art direction, asset pipeline and level visuals. Focus on readable silhouette and color language."
         },
