@@ -205,7 +205,7 @@
         </div>
 
         <div class="card" role="listitem" tabindex="0" data-id="minatamis" aria-label="Open Minatamis project">
-          <div class="thumb"><img src="assets/minatamis-1.png" alt="minatamis — preview"></div>
+          <div class="thumb"><img src="https://scontent.fmnl8-5.fna.fbcdn.net/v/t39.30808-6/480301141_9279944875455896_5586049436356959454_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=86c6b0&_nc_eui2=AeGXtevPeRBzpNdBDueg6y3kJu0rJJOujLgm7Sskk66MuEi62TMhcBydNnzVenZoK04f3EUI44ZCDacccP0CgQcF&_nc_ohc=CT2Yo-8Qoz4Q7kNvwH3L0re&_nc_oc=AdllvDE84_LpZJF4n_STFWwKM8A5Sh0jR2H6otpMCgZ797sPT6BnTzumc9YkMAbAwjundPH9B6TlcPZQwe-fIkDV&_nc_zt=23&_nc_ht=scontent.fmnl8-5.fna&_nc_gid=RhwNBnzG8DEGpyP17hJGkQ&oh=00_AfjkwPuI81Qvpc_KYWRz6oYHLofEILpzi-HFoId5zL16Fg&oe=692EF8B8" alt="minatamis — preview"></div>
           <h4>Minatamis — Lead Artist (2023)</h4>
           <p>Led art direction, asset pipeline and level visuals. Focus on readable silhouette and color language.</p>
         </div>
