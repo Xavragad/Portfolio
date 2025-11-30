@@ -25,7 +25,8 @@
         radial-gradient(1200px 600px at 10% 10%, rgba(120,40,160,0.12), transparent 6%),
         radial-gradient(900px 500px at 90% 80%, rgba(10,10,30,0.18), transparent 12%),
         linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
-        url('../Homepage_files/480301141_9279944875455896_5586049436356959454_n.jpg') center/cover fixed;
+        /* UPDATED: Background image path changed to local assets folder */
+        url('assets/bg-space.jpg') center/cover fixed; 
       color:var(--muted);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
@@ -40,8 +41,25 @@
     @keyframes float{0%{transform:translateY(0) translateX(0) scale(.7)}50%{transform:translateY(-140vh) translateX(60vw) scale(1)}100%{transform:translateY(-280vh) translateX(0) scale(.7)}}
 
     header{max-width:var(--max-width);margin:36px auto;padding:28px;display:flex;gap:18px;align-items:center;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));border-radius:var(--radius);border:1px solid rgba(255,255,255,0.04);box-shadow:0 10px 60px rgba(2,0,10,0.6);position:relative;z-index:10}
-    .crest{width:124px;height:124px;flex:0 0 124px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.25));border:2px solid rgba(217,164,65,0.06);box-shadow:inset 0 2px 12px rgba(0,0,0,0.6)}
-    .crest svg{width:86px;height:86px;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.6))}
+    /* UPDATED: Removed SVG styling */
+    .crest{
+        width:124px;
+        height:124px;
+        flex:0 0 124px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:12px;
+        background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.25));
+        border:2px solid rgba(217,164,65,0.06);
+        box-shadow:inset 0 2px 12px rgba(0,0,0,0.6);
+        overflow: hidden; /* Ensure image respects border-radius */
+    }
+    .crest img { /* New rule for the profile picture */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
     .hero-meta{flex:1}
     .hero-meta h1{font-family:'Cinzel',serif;font-weight:700;color:var(--gold);letter-spacing:1px;font-size:2rem;margin-bottom:6px;text-shadow:0 2px 8px rgba(0,0,0,0.7)}
     .hero-meta p{color:var(--muted);font-size:0.98rem;max-width:70ch;line-height:1.6}
@@ -154,9 +172,8 @@
     <i style="left:82%; bottom:-15%; width:6px;height:6px; animation-duration:13s"></i>
   </div>
 
-  <!-- sword cursor element (aria-hidden) -->
   <div class="sword" aria-hidden="true">
-    <svg viewBox="0 0 64 64" xmlns="assets/roneil.png" aria-hidden="true" focusable="false">
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
       <g stroke="#111" stroke-width="1">
         <path d="M32 2 L38 12 L46 20 L38 28 L32 26 L26 28 L18 20 L26 12 Z" fill="#eef2f6"/>
         <rect x="30" y="28" width="4" height="16" rx="1" fill="#dfe6ea"/>
@@ -170,14 +187,8 @@
 
   <header role="banner" aria-label="Intro crest">
     <div class="crest" aria-hidden="true">
-      <svg viewBox="0 0 64 64" xmlns="assets/" aria-hidden="true">
-        <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#ffd98b"/><stop offset="1" stop-color="#cf8a3a"/></linearGradient></defs>
-        <circle cx="32" cy="32" r="30" fill="url(#g)" opacity="0.12"/>
-        <path d="M32 12c6 6 12 8 12 18s-6 20-12 22c-6-2-12-12-12-22s6-12 12-18z" fill="#b64b4b" opacity="0.95"/>
-        <path d="M32 20c3 3 6 4 6 9s-3 11-6 12c-3-1-6-7-6-12s3-6 6-9z" fill="#fff" opacity="0.06"/>
-      </svg>
+      <img src="assets/pfp.jpg" alt="Angelo Paa Profile Picture" />
     </div>
-
     <div class="hero-meta">
       <h1>Angelo Roneil C. Paa</h1>
       <p>Game Artist & Developer — Weaver of worlds, sculptor of light and shadow. Environments, models and gameplay — forged with Blender, Unity and a restless imagination.</p>
@@ -197,55 +208,55 @@
     <section class="section" id="projects" aria-labelledby="projects-title">
       <h2 id="projects-title">Grimoire of Works <span class="ornament">✦</span></h2>
 
-           <div class="grid" role="list">
-        <div class="card" role="listitem" tabindex="0" data-id="darkons" aria-label="Open Darkon's Madness project">
-          <div class="thumb"><img src="assets/centi.jpg"alt="darkons — preview" alt="Darkon's Madness — preview"></div>
-          <h4>Darkon's Madness — Poster Artist Winner(2019)</h4>
-          <p>Poster winner for Artix Entertainment, a company that makes games.</p>
-        </div>
+        <div class="grid" role="list">
+          <div class="card" role="listitem" tabindex="0" data-id="darkons" aria-label="Open Darkon's Madness project">
+            <div class="thumb"><img src="assets/centi.jpg" alt="Darkon's Madness — preview"></div>
+            <h4>Darkon's Madness — Poster Artist Winner(2019)</h4>
+            <p>Poster winner for Artix Entertainment, a company that makes games.</p>
+          </div>
 
-        <div class="card" role="listitem" tabindex="0" data-id="minatamis" aria-label="Open Minatamis project">
-          <div class="thumb"><img src="https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/590730627_122134250954964084_6565965628743927984_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH45A3vr7hVJiPRYh1BKvNAAHPSZGLrtz4Ac9JkYuu3PhqsCJ_aeKiurhNU_Ih94GIPfLGEzgviVoarSJpHhi7g&_nc_ohc=LRwub0qMLjUQ7kNvwGS4mI2&_nc_oc=Adl11jzk_itLTwUwi9OC2mOyN4Jl4FVvyHT30CajBvVC66cpglIsttbWygx0Sl7-om051zn_22OXUxE0UIYtfVyO&_nc_zt=23&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=xnBKf_-jejzQ2l9_xfNbpg&oh=00_AfgV8FFQNTF74JyKVDI6LLXOrVbYfONCsnu19yl4-VlWfQ&oe=69308178" alt="Minatamis — preview"></div>
-          <h4>Minatamis — Lead Artist (2025)</h4>
-          <p>A 3D Filipino dessert simulator game for pc.</p>
-        </div>
+          <div class="card" role="listitem" tabindex="0" data-id="minatamis" aria-label="Open Minatamis project">
+            <div class="thumb"><img src="assets/minatamis-thumb.jpg" alt="Minatamis — preview"></div>
+            <h4>Minatamis — Lead Artist (2025)</h4>
+            <p>A 3D Filipino dessert simulator game for pc.</p>
+          </div>
 
-        <div class="card" role="listitem" tabindex="0" data-id="kung-fury" aria-label="Open Kung Fury project">
-          <div class="thumb"><img src="https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/587490884_122134270718964084_6600783452602910697_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEmoBQgae4i73FgsGDEFHuJdAF7vJhtJpd0AXu8mG0ml3s3m4I_bkY-HRDgWnuQMR4s622KW3CRQiOulow49llO&_nc_ohc=iqrYP0PvDcEQ7kNvwHMzQe-&_nc_oc=Adno1mVtHvTW4XV-DGWBklLoybDOJ4ExP_1pvZRi4Rmao8TQDtSyZNW3qzmWi5Pe3Do8fzxVQQCVt1fv5pWbOGtL&_nc_zt=23&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=38Rt75jgVl9nk0Ywk5qHEw&oh=00_AfiyadHdmhOkRO_sevLtT1V8_wG32wNRY0VCkDBeI-l-Jg&oe=69308E5C" alt="Kung fury — preview"></div>
-          <h4>Kung fury — Pixel Artist (2023)</h4>
-          <p>A project to convert a short film into a game concept.</p>
-        </div>
+          <div class="card" role="listitem" tabindex="0" data-id="kung-fury" aria-label="Open Kung Fury project">
+            <div class="thumb"><img src="assets/kung-fury-thumb.jpg" alt="Kung fury — preview"></div>
+            <h4>Kung fury — Pixel Artist (2023)</h4>
+            <p>A project to convert a short film into a game concept.</p>
+          </div>
 
-       <div class="card" role="listitem" tabindex="0" data-id="pixel-z" aria-label="Open Pixel Z project">
-          <div class="thumb"><img src="https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/591256068_122134251272964084_3668976076070015458_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE1QXXX-KUHUzytvfTxTorZw1fvexL0GivDV-97EvQaKw0wV6LOlyO0ofmbQBuTlzZWYHrSrll04UsTnbiTyBRi&_nc_ohc=MIC5HTW4xcIQ7kNvwHubqgH&_nc_oc=Adme_htBhlaC_jeDsGYTjQI8_ksoFl69qNLv_KzFuEoP1qZnSTS5rQAQZvRzT2ZsZkq0N4MTtytN0InGDUv_H46r&_nc_zt=23&_nc_ht=scontent.fmnl8-3.fna&_nc_gid=tbfgFoFR8oC9ytL21yHM_Q&oh=00_AfhB1-O0wuUvBh6OM-wHZ20nEJzKerxIQgXtjieQbKCb2Q&oe=69309A9C" alt="Pixel Z — preview"></div>
-          <h4>Pixel Z — Pixel Artist (2024)</h4>
-          <p>A post-apocalyptic pixel game.</p>
-        </div>
+          <div class="card" role="listitem" tabindex="0" data-id="pixel-z" aria-label="Open Pixel Z project">
+            <div class="thumb"><img src="assets/pixel-z-thumb.jpg" alt="Pixel Z — preview"></div>
+            <h4>Pixel Z — Pixel Artist (2024)</h4>
+            <p>A post-apocalyptic pixel game.</p>
+          </div>
 
-        <div class="card" role="listitem" tabindex="0" data-id="asset-pack" aria-label="Open 3D Asset Pack project">
-          <div class="thumb"><img src="https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/591436253_122134251020964084_77538625576619391_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGXTdD-J9jr8rqlGEVFq_vhH29_2-oiHpEfb3_b6iIekR9tETCCsESzWXLQ0rsOBWRyoubaAV58Lsxyce-usPst&_nc_ohc=M3Oj3_kVaisQ7kNvwHeHQog&_nc_oc=AdnZd5_pIFF6pgFW3Y10o4IGtkwHz3r4HDk5fLIhdwx8jRv8ySyn-c4jHYo9HEydEixTxVE_zbTcZ-m1oN0wTJ0O&_nc_zt=23&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=EMLzLJcG7KAeU8Vz_0ACQQ&oh=00_Afj9PvFS9fLqhtLWRi1YFjOssy23aDUhWJKlUcz2-7EBfg&oe=6930D1C5" alt="3D Asset Pack — preview"></div>
-          <h4>3D Asset Pack (2024)</h4>
-          <p>Collection of rigs, PBR textures, and props for environment kits and quick prototyping.</p>
-        </div>
+          <div class="card" role="listitem" tabindex="0" data-id="asset-pack" aria-label="Open 3D Asset Pack project">
+            <div class="thumb"><img src="assets/asset-pack-thumb.jpg" alt="3D Asset Pack — preview"></div>
+            <h4>3D Asset Pack (2024)</h4>
+            <p>Collection of rigs, PBR textures, and props for environment kits and quick prototyping.</p>
+          </div>
 
-        <div class="card" role="listitem" tabindex="0" data-id="tusok-tusok" aria-label="Tusok Tusok project">
-          <div class="thumb"><img src="https://scontent.fmnl8-1.fna.fbcdn.net/v/t39.30808-6/591872633_122134310690964084_2820170660287122570_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFocDRsE-str0lr7XHjg1UFzQTBGxtnvu3NBMEbG2e-7Um-VHpgo6yd_YT0kfjKwuo5H7zcxrAKO6Dla320uCBB&_nc_ohc=wfsIFFUG6L0Q7kNvwHcR-k0&_nc_oc=AdnyFy4cIQZcLpN3y3UwA_zDF3yjLvtaluEwZ-XDsmqWyDSzMh7UVUKKfiGifQ25KtX3JT-eN7a75EIcvIWEz8Mq&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&_nc_gid=GUu3e9h8LA0qIjaha8skxA&oh=00_AfgxapunjQVhRJREEkUk27VU3_oStnLNhkOObRUZktZudQ&oe=6930CC97" alt="Tusok-Tusok — preview"></div>
-          <h4>Tusok-Tusok</h4>
-          <p>Small Unity prototypes exploring narrative tools, lighting setups and locomotion mechanics.</p>
-        </div>
+          <div class="card" role="listitem" tabindex="0" data-id="tusok-tusok" aria-label="Tusok Tusok project">
+            <div class="thumb"><img src="assets/tusok-tusok-thumb.jpg" alt="Tusok-Tusok — preview"></div>
+            <h4>Tusok-Tusok</h4>
+            <p>Small Unity prototypes exploring narrative tools, lighting setups and locomotion mechanics.</p>
+          </div>
 
-               <div class="card" role="listitem" tabindex="0" data-id="2d-art" aria-label="2D Art project">
-          <div class="thumb"><img src="https://scontent.fmnl8-1.fna.fbcdn.net/v/t39.30808-6/589510649_122134333688964084_6568535012819470326_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFYg3u02njgg7R2-sGlpgsfbkUw8N1iu4NuRTDw3WK7g-CdY2ZEnarQliv_PaVqDY7aWEaW0rfvtQ719rPDJu4P&_nc_ohc=16p9ddKZuv4Q7kNvwETMnu2&_nc_oc=AdkmsX7zcJ9ulNLK47ez3IGy2HhbxXUW0d55k7hU-yHuzScWz2CfAk1dr6WKM5wWzvdx6I89TsBk81iPPwlBb5st&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&_nc_gid=9-zC-b0K7EhmQs3T6oeKVw&oh=00_AfixH36_CqP9mqZ9fy0B6KGcf-2_rTW3As_Dx2bVX5NTUg&oe=6930FC91" alt="Tusok-Tusok — preview"></div>
-          <h4>2D Artworks</h4>
-          <p>Small Unity prototypes exploring narrative tools, lighting setups and locomotion mechanics.</p>
-        </div>
+          <div class="card" role="listitem" tabindex="0" data-id="2d-art" aria-label="2D Art project">
+            <div class="thumb"><img src="assets/2d-art-thumb.jpg" alt="2D Artworks — preview"></div>
+            <h4>2D Artworks</h4>
+            <p>Small Unity prototypes exploring narrative tools, lighting setups and locomotion mechanics.</p>
+          </div>
 
-               <div class="card" role="listitem" tabindex="0" data-id="animation" aria-label="Animations project">
-          <div class="thumb"><img src="https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/592378654_122134338014964084_1893301961278696230_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHCY3WKj5EO5Qqa29ymjcoIb4qberqZROlvipt6uplE6SIX-QF944j20HxQ9mXWf2o5e7QEwTiXDy8WLowic6-4&_nc_ohc=ghyDWu1EBv0Q7kNvwF_3ZUv&_nc_oc=AdkFrni4cg4hV3_vnEuz5fcoTXkplVFmY41m7C1nh-zbAjQcF-fC_5YE5hgHDy3TMGH5kBujuQa9uQStrXQS4KV3&_nc_zt=23&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=MXYmpnBJzOSRcO9NJSNDug&oh=00_AfgCxXsdEKobjxq5DxlaPNz3m-TY781dtjeQqYJ-It4WWA&oe=6930F370" alt="Tusok-Tusok — preview"></div>
-          <h4>Animations</h4>
-          <p>Small Unity prototypes exploring narrative tools, lighting setups and locomotion mechanics.</p>
+          <div class="card" role="listitem" tabindex="0" data-id="animation" aria-label="Animations project">
+            <div class="thumb"><img src="assets/animation-thumb.jpg" alt="Animations — preview"></div>
+            <h4>Animations</h4>
+            <p>Small Unity prototypes exploring narrative tools, lighting setups and locomotion mechanics.</p>
+          </div>
         </div>
-      </div>
     </section>
 
     <section class="section" id="skills" aria-labelledby="skills-title">
@@ -271,7 +282,6 @@
     </section>
   </main>
 
-  <!-- static single-page modal viewer with gallery (4 images per project) -->
   <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-overlay" data-close></div>
     <div class="modal-panel" role="document">
@@ -292,7 +302,6 @@
     </div>
   </div>
 
-  <!-- lightbox element (enlarged image) -->
   <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true" aria-label="Enlarged image">
     <span class="close-hint">Esc or click to close</span>
     <img id="lightbox-img" src="" alt="">
@@ -312,28 +321,30 @@
           year: "2019",
           tools: "Blender, Substance, Photoshop",
           gallery: [
-         "https://scontent.fmnl8-5.fna.fbcdn.net/v/t39.30808-6/480301141_9279944875455896_5586049436356959454_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=86c6b0&_nc_eui2=AeGXtevPeRBzpNdBDueg6y3kJu0rJJOujLgm7Sskk66MuEi62TMhcBydNnzVenZoK04f3EUI44ZCDacccP0CgQcF&_nc_ohc=CT2Yo-8Qoz4Q7kNvwH3L0re&_nc_oc=AdllvDE84_LpZJF4n_STFWwKM8A5Sh0jR2H6otpMCgZ797sPT6BnTzumc9YkMAbAwjundPH9B6TlcPZQwe-fIkDV&_nc_zt=23&_nc_ht=scontent.fmnl8-5.fna&_nc_gid=RhwNBnzG8DEGpyP17hJGkQ&oh=00_AfjkwPuI81Qvpc_KYWRz6oYHLofEILpzi-HFoId5zL16Fg&oe=692EF8B8",
-          "https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/480275356_9274834209300296_4685796113811319668_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEPvZYEBPCqdiHNw0NJ9fUDzXnc1cSCHqfNedzVxIIep0U-rm5NumtATCEbIZCkLXQV9EGYqnZp9GgV5yeWPUqh&_nc_ohc=CpSoZtp1V-MQ7kNvwH2IMnA&_nc_oc=Adm4il5XQFLu6qZaFFU1DuayCUQa29saSc4p6TBYIrH5XR8a2DsLswavhRiCUxNdZ7DZQJaNxmnyLxePI9UKrHGZ&_nc_zt=23&_nc_ht=scontent.fmnl8-3.fna&_nc_gid=jI8t5_mGUOTX_6_5s_jQsw&oh=00_Afie94SmPIDyAxj369vDE2QMBUYaYt5X2cxUs0EX_p-A_A&oe=692EFCBF",
-            "https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/480241841_9279928645457519_4524933105693976392_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeE6Vgpc52rx0Hey_yJZdn1HX3YqMwT3TslfdiozBPdOyaBh0tsvuilvVWZyqK51aEZXaNSGbwUfhWS4SyXHrZxI&_nc_ohc=ci8aJtYAdkEQ7kNvwE1meNG&_nc_oc=AdnwMhuyFXq1dBIkhienBY4B01J25002kh9iZqmod53ttiEEA6vM05mSxi_3QruGD2E9CkXeMH620304Lz66rIr2&_nc_zt=23&_nc_ht=scontent.fmnl8-3.fna&_nc_gid=j56Tb_d0Rbt53Q1vywKjZw&oh=00_AfjjOWroYTw_K6qEUFtl7Va2e-AUCJO8arOolr4A-z7mtg&oe=692ED9F2",
-            "https://scontent.fmnl8-1.fna.fbcdn.net/v/t39.30808-6/591407609_25372429759114151_842892467101067041_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=bd9a62&_nc_eui2=AeFBTj75i_1F4LYieKDqTdWQKQ2jNE1mroopDaM0TWauign4wDgWPw_owN__r0u1TW6wDaLcUOYehERRanIie1wI&_nc_ohc=tBCej85TmrkQ7kNvwEbwSNk&_nc_oc=AdmX7GSIlnIlpc5BvBTLvr4u24GJOU6tnhKJNtgLsYEEiTbEd2BkG9v68X8bqiileWfgbkImeDzH5W0Q-C3RQCe6&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&_nc_gid=ki37xn0EN1UoXYPnoZjt7g&oh=00_Afh6QQ0krYuaioe1e9tOZ8j5ghTKNOB9VH5ao4ftRcp9XA&oe=692EE134"
+            // UPDATED: Local paths
+            "assets/darkons-1.jpg", 
+            "assets/darkons-2.jpg", 
+            "assets/darkons-3.jpg",
+            "assets/darkons-4.jpg"
 
           ],
           description: "Environment props and textures; contributed mood pieces and banners used during the event."
         },
-     "minatamis": {
+      "minatamis": {
           title: "Minatamis",
           role: "Lead Artist",
           year: "2025",
           tools: "Blender, Unity, Substance",
           gallery: [
-            "https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/590730627_122134250954964084_6565965628743927984_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH45A3vr7hVJiPRYh1BKvNAAHPSZGLrtz4Ac9JkYuu3PhqsCJ_aeKiurhNU_Ih94GIPfLGEzgviVoarSJpHhi7g&_nc_ohc=LRwub0qMLjUQ7kNvwGS4mI2&_nc_oc=Adl11jzk_itLTwUwi9OC2mOyN4Jl4FVvyHT30CajBvVC66cpglIsttbWygx0Sl7-om051zn_22OXUxE0UIYtfVyO&_nc_zt=23&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=gIFUwdCUSBKg2O6d5E9utA&oh=00_AfgrV6fZ-DdG0rSciYmsskidcbM0p837oK7Ctvvf8YbA2Q&oe=69308178",
-            "https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/591697591_122134250906964084_8848095934302401622_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGMB2UWWoSwniPVoAFy0SG1kfUCqQL1A3mR9QKpAvUDeeH4973BCfzvw6Pi4Gcicknuly1neSrsE69bK3KQxflR&_nc_ohc=9hnxrAZVVh4Q7kNvwHYOPwH&_nc_oc=Admtax266oCH19BAAPsgcFxY0Rk__3wX3lcUQPin8_9b9lCdBi4f-7pqLHgB-u-EkRX8Ptcrq7plpcI3QRpqe6hr&_nc_zt=23&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=hFYSDd3yPwl3e8qxkSCODg&oh=00_AfgKBhIKubYTSNx1Rz3zuMdTEuZKjnWDgLbTX3c63GujJQ&oe=69308A20",
-            "https://scontent.fmnl8-6.fna.fbcdn.net/v/t39.30808-6/591207893_122134250816964084_7026798429488048393_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFlZqv4aUYa2v-XvPpjx2nLqFbFBP3SZqmoVsUE_dJmqTXbzX1TlMWIFCjsppi-x0wiu_kgYkf1RXhPGv3ttKfb&_nc_ohc=qxvl1Y9LEIoQ7kNvwHQzqeI&_nc_oc=AdmhQC8gX_NE2kzAceC4e7NTTP0QylrYIldDkywB59MNsOVf4fzeho9s8pVpsi75eSj3XXkrCcXNyc0v6EFm70vb&_nc_zt=23&_nc_ht=scontent.fmnl8-6.fna&_nc_gid=B-EKg2-4Enq8qeXbGEuqdg&oh=00_Afi8L-o-zMhXSuyw3eyH6n6-1gSKHPqDcSi4TaHpXqOQpA&oe=69307DE7",
-            "https://scontent.fmnl8-6.fna.fbcdn.net/v/t39.30808-6/591849298_122134250768964084_46462489488233_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHSoAqhzLlqMgT1EjnCP-ghbbhdzsEz88htuF3OwTPzyBM7BovEIFUeI_TbkuaV5ok2iyp33zA3KVyCEBrfaQSI&_nc_ohc=eZt9tE4DIIwQ7kNvwG1nxTR&_nc_oc=Adm8s0Ncd5qruizfafyZ4BLE3_aqbWyQyUG8K_iOLShQNlcWIXZL6GT2O7fdznBBMuIVytTpb5gQDXC12CzZxBOB&_nc_zt=23&_nc_ht=scontent.fmnl8-6.fna&_nc_gid=9hTI3uZSGXZ1DOMTKsKGLQ&oh=00_AfikOCTGYluz1zznEtwVc1ISRsEYY9nzxjRg_2R23hOnnw&oe=69309AD2",
-             "https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/587201617_122134250720964084_3213999126341676961_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGqPX-Yo6wdKZM_GyrOk7R99Ikm_gm3Lh_0iSb-CbcuH1vGGaijy3xbfJzIwTCPrD2PGL9-t5EACzgz28uFJpKJ&_nc_ohc=uHCIvS7689kQ7kNvwFhaeAV&_nc_oc=AdlHLTx2KCJ9hW6aayUDpoHiDxF6fFqkV6g5c8tKDoOcaw7XXtntrVrWGimXtbtTqHC2pBgJDLgHIRpZSoBabZKI&_nc_zt=23&_nc_ht=scontent.fmnl8-3.fna&_nc_gid=JUf8F1OBzAF1imNLWlpB3w&oh=00_AfhPDnFQajIeBME1RBXGERSxEXzyG86FIBztibRBpNWbrA&oe=6930964B",
-            "https://scontent.fmnl8-6.fna.fbcdn.net/v/t39.30808-6/592360497_122134250672964084_7588137720399118180_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGREMdq6_hD_bLnK7kBz7jOP0RFJ6GKNWQ_REUnoYo1ZDyGG10pUQ-W61uahUwenubuCazU16pSI1NnZtCpp6YJ&_nc_ohc=Rw5bX82Ao5IQ7kNvwHtGE-k&_nc_oc=AdkpvJfFgkEbEUVBBnDyoZsjfxRIKgXlh-xFcRy9oOG9JDYlp8VcrGUo2jITdVQv-ZhyZ8NDq_kYv5AzRtz1xqsp&_nc_zt=23&_nc_ht=scontent.fmnl8-6.fna&_nc_gid=XBQMPw6QtTs61r56W1Y1fQ&oh=00_AfiTtpvTfExSFcapoGySO7JxuMhS2Fl6OKPJVJb23xDetA&oe=69309D14",
-            "https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/589901923_122134250624964084_3282076915131671293_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHx6qVsr8j_0fcgwW2QbF64mPt3XD9o1IyY-3dcP2jUjJENkyzpxRFhKmn8zmgANYktxjRlIzpVVrjh49U5t0Qk&_nc_ohc=5ZUKeaAZMjYQ7kNvwEQRkq7&_nc_oc=AdkkEJ_018kEmZ-uTbkemsQt6pR7ikWGaOp0paTIonopel7wsmgqO6Rl33Bx3-2Ebqndcz3tfQEcyrrHiq1b-ryr&_nc_zt=23&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=XjJFE56zM02RkaWNrJt-nA&oh=00_AfheN0m-ggk7uxPGgxUPs3_HCI0OU9qzP02j3W5W5C3TrA&oe=693095CD",
-            "https://scontent.fmnl8-1.fna.fbcdn.net/v/t39.30808-6/588883784_122134250576964084_3732729970713400936_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEO6es3jvZFhR_RFp7KApODmScdF-ss1oGZJx0X6yzWgfpIMOO6hwR3fjkseb6xWZu6H4ItJA2Gy7GAIBIvB5GN&_nc_ohc=fxWdB8WvL0oQ7kNvwHy19Xd&_nc_oc=AdmK2imcHkEeCL3nZb-p5yr94RbkBL3oWnVjolGblbXVpdNLLqLXQ1k0VF65ZcgfJERVf2MlBPO60tXkf1j_DUBi&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&_nc_gid=R6GA-0mi7kwizW_QW_cOIw&oh=00_AfiXyiTFA8RFYCoaTEaO9YmL0eDhWRolSlz0KE0CQXrR9g&oe=693082EC"
+            // UPDATED: Local paths
+            "assets/minatamis-1.jpg", 
+            "assets/minatamis-2.jpg", 
+            "assets/minatamis-3.jpg",
+            "assets/minatamis-4.jpg",
+            "assets/minatamis-5.jpg",
+            "assets/minatamis-6.jpg",
+            "assets/minatamis-7.jpg",
+            "assets/minatamis-8.jpg"
 
           ],
           description: "Led art direction, asset pipeline and level visuals. Focus on readable silhouette and color language."
@@ -344,321 +355,214 @@
           year: "2025",
           tools: "Node, C#, Docker",
           gallery: [
-             "https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/589924183_122134290620964084_9164014774090996795_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE9bPvXJ07ishxSHgB0WjU7kvmRC0-2rYGS-ZELT7atgb-agsa1RA6CmywZ14uvgd_jtEOcmw1WerynUrs8eglu&_nc_ohc=r613dqSX5a0Q7kNvwEO3pHD&_nc_oc=AdkHr2S3wS9gdOYe9rTmvpL8a_JENnO1caJZQ8nHcIS_YSCQk3rvWYAVKea8vvb0e-jpa2r3sKhht9iCDkrsNq4a&_nc_zt=23&_nc_ht=scontent.fmnl8-3.fna&_nc_gid=QVq6gv1sKTiQxajQ26kxlA&oh=00_AfjNHPW1IJtRAbUj1PpJ0ifpzMb-xgA8SmFFJJEQ7G08ew&oe=6930B319",
-            "https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/591436291_122134290668964084_1486838199370127185_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeExmCyvStkzSFacQo2k3dObdMNbqZx_g9V0w1upnH-D1ZgzSDbRhnhQKaalmPi-sZKejgJio3LYvjW_98chvFMk&_nc_ohc=QNmkCShxeAgQ7kNvwFTC0uM&_nc_oc=AdkeSUN0MQB7-w9Xht7Y-qAs06X3sy86hXVRvxMbINHhr31sRZdn14yDFTOV0CeQ3JWQ_tWvXrLf6K-r4laSv9aL&_nc_zt=23&_nc_ht=scontent.fmnl8-3.fna&_nc_gid=fTaKXG4Fkgp-9Om1vss3jQ&oh=00_AfgIxyidfSE-wT8qOdUE5zcbKSPmuN-iv56Ku__PyEZgVw&oe=693095EF",
-            "https://scontent.fmnl8-6.fna.fbcdn.net/v/t39.30808-6/591829993_122134290764964084_4191156603721765678_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHSQp9MK3Ufiq-5xxODWSGnMk2xVjYbqz4yTbFWNhurPq-dyoLpz5IDCWsXPQUnUWhlbV_pd11pjhigFFfnmgUG&_nc_ohc=RMLWqVZkYhAQ7kNvwGkFK50&_nc_oc=AdkcR-JlUT_pL9QPYsUKtpF_f50j0uvzmTKr0S5UeXh0M0GRqwAQnC1vPzkqR2Z4MyjMQgvofgqqzDVEsnxC9wBU&_nc_zt=23&_nc_ht=scontent.fmnl8-6.fna&_nc_gid=55Z0K3D0AiygwbHiuomgiQ&oh=00_Afi6_xBeR8AMt1EGvqbAU0bNXjxJSr6Yz6dkwqI8-_Pr5w&oe=6930BEC2",
-            "https://scontent.fmnl8-4.fna.fbcdn.net/v/t39.30808-6/591449080_122134290716964084_6024852386325134416_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHrZY6MMclfCFp2kUj6k9HaQhpH7ragCfJCGkfutqAJ8uuFOnViluB_84Tie92y3zNo7q8aCw-eNQndypxilKt4&_nc_ohc=Ra5AsKYO9XsQ7kNvwFCRqJB&_nc_oc=AdmfZQtT85-ekZbHJltrNcHcv9awR-ywNTtsgBTrifhjGvxylcphBoUL3b6w8VQWRt3PXMJiVgy2F0wqzS4gWNES&_nc_zt=23&_nc_ht=scontent.fmnl8-4.fna&_nc_gid=cFJZ0cfTOw3DiveC6hOqTw&oh=00_AfhatPHaoOPOxC4JDwJxJtZaorXq9Q0tSN40hDKi6_aOjQ&oe=6930A9CF"
+            // UPDATED: Local paths
+            "assets/kung-fury-1.jpg", 
+            "assets/kung-fury-2.jpg", 
+            "assets/kung-fury-3.jpg",
+            "assets/kung-fury-4.jpg"
           ],
           description: "Server-side tooling and content pipelines to support live services and asset distribution."
         },
-         "pixel-z": {
+          "pixel-z": {
           title: "Pixel Z",
           role: "Full Stack",
           year: "2025",
           tools: "React, Node, SQL",
           gallery: [
-            "https://scontent.fmnl8-1.fna.fbcdn.net/v/t39.30808-6/590746110_122134250414964084_6524824578034894088_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGC7jZTqR9s2h6v9B0QR8r6KJPUP0F51ckok9Q_QXnVyQ84BQaXpbRri_hGJ6kdJTmLrkoyZof6xUjj6_aKBWaq&_nc_ohc=JcxtsVyWbE0Q7kNvwES1Zsa&_nc_oc=AdlaJSRnTsDcBtXMIXNXm8F_j8_R_V2_oCfQV4QPUXJpN_ITBKLV7yfZnQwwPB89n5Tc9yL6lw_5nJLbiDfdZuYZ&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&_nc_gid=HU9NOP7IbOgjVupZKXe8MA&oh=00_Afi0CA_Wq0VA3VtyvtlR2HHBBN_eYdtZZdnIjhE88XYlDQ&oe=6930A8DA",
-            "https://scontent.fmnl8-4.fna.fbcdn.net/v/t39.30808-6/587096117_122134250462964084_2265476492953525205_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEh77gFafZ6vJ1uVxe51niOi1WTbPyvVneLVZNs_K9Wd_kQyZkec6mARvAU2r1YHpHIOWVI35v0Rtl2oMLnKE3K&_nc_ohc=OUPaMZHD6xMQ7kNvwGgETvL&_nc_oc=AdnwAdUtI2-FvYGwugT4C5YKFdm9LVYv8w1fEpdAi2-vCmohI48K6ow68D0ahh_DKBQ1rBdwi0vo5Yq4BmXdhXuM&_nc_zt=23&_nc_ht=scontent.fmnl8-4.fna&_nc_gid=NFDOsRlOZHJcy041Nh-5Yg&oh=00_AfgAYVloaNhiUYQqoeI9t3e9qq11t2OfaT7WKt8IOpJnNw&oe=6930AFEA",
-            "https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/591737862_122134250378964084_3126540950505333040_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGenlrddVHm_9ySGMf-g8paMKljfTdmQ-EwqWN9N2ZD4U2dj3mHnO_60xmbcn6Y5ThY-DwPOJTEEIji38EZLV2Y&_nc_ohc=J5XeG7Q3KfkQ7kNvwEibOXo&_nc_oc=AdkBtt-LAEmvr9dmiaDBbaDcgIeyowTB6wKnwVC5u7noZcOeNzYGx6xowiGVypNKzHe4cXi1w3aQ757mEGe-HaSl&_nc_zt=23&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=xMPpDQRlevD_0FtxBHDklw&oh=00_AfhQjZaqFyPRu4IF3yJsx8_-MOAb0lpw7VLmPnQD3Blj0A&oe=69308E6C",
-            "https://scontent.fmnl8-6.fna.fbcdn.net/v/t39.30808-6/590745613_122134250216964084_4665402040566342111_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHbHYMkzXJ1KPuCndQ8WxQUCyKrKNMLZIcLIqso0wtkh7gGsFFWxx6t9hD0FmsbmBk64C7k-LSBxDV4a8MT6nyR&_nc_ohc=AB5I7nun_4oQ7kNvwFjoK7m&_nc_oc=AdnPLVDiTaFZF0wSjjSNTNJCTdNC5FFjv_O5tLdOvGF5b4k6pEdNhbkS3Ar6orZEIzqc9F60Qux6xrwCwovQOnS7&_nc_zt=23&_nc_ht=scontent.fmnl8-6.fna&_nc_gid=ooIe7yoZFbWBI0Lzpt7qmw&oh=00_Afhmnakrba7bW-_g7Rf42b8X_PMgLn2Fu-wzXCsSw3tEaw&oe=69309BDA"
-
+            // UPDATED: Local paths
+            "assets/pixel-z-1.jpg", 
+            "assets/pixel-z-2.jpg", 
+            "assets/pixel-z-3.jpg",
+            "assets/pixel-z-4.jpg"
+            // The rest of the array was cut off, using placeholder paths
           ],
-          description: "Web portal for analytics and content management with dashboard visualizations."
+          description: "A post-apocalyptic pixel game."
         },
         "asset-pack": {
           title: "3D Asset Pack",
-          role: "Creator",
+          role: "3D Artist",
           year: "2024",
           tools: "Blender, Substance",
           gallery: [
-            "https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/589511563_122134249868964084_3483510356829945537_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG9OlV2pTqozINhTblSHTbBvg3L-Iudjga-Dcv4i52OBvDwXawwxwzJCgGb4T1nza_CAXEWATMkb_HYYbbAoeju&_nc_ohc=m6ykCJU471wQ7kNvwFvyvPc&_nc_oc=Adnkc_T9JaumiH-Emg6Tpo0nbemdr3AVMQONO949V3yfog6NshcDNow7_oZw6GpmjDBnqaS332dNZ6q-f-X3gRKK&_nc_zt=23&_nc_ht=scontent.fmnl8-3.fna&_nc_gid=2hN-K4aWzquaEeYa8tZaXQ&oh=00_Afgo3jY0U8rVT9S3-8XHFHGs_UApsY8cMuwFxf7osz1abg&oe=6930E9D9",
-            "https://scontent.fmnl8-4.fna.fbcdn.net/v/t39.30808-6/592412312_122134249820964084_4835894059072983951_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGPGPAtTLIK5BTRacSOQqKzS68396IdxQVLrzf3oh3FBWa4OWtGBlrg4IDLu48MmEl1jO1OddDqOkERZA8gL2RH&_nc_ohc=D3KW50025o4Q7kNvwFeatzR&_nc_oc=Admr_-TYmtYsSnRbo-Lh2ft9TJk4ZRlsNui9qW_gR9qL6OshM3s875niVUGuZxXhQCONXzWUBNSPc7Ipx90k8yyY&_nc_zt=23&_nc_ht=scontent.fmnl8-4.fna&_nc_gid=bWBQOLRr0EayBC4LxCN-gA&oh=00_AfiOwmxgChf8dmA4IWc2b5iYaGJgJeqceH2q3AS1hK-RAA&oe=6930E6CB",
-            "https://scontent.fmnl8-5.fna.fbcdn.net/v/t39.30808-6/591926831_122134251164964084_4855099503524402600_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEWbROR0TbluFbsNneYxZ4-GNg3mKWTq58Y2DeYpZOrn8-7gFRzftjUvvWkAz8LopB8QytV-iXLwgKYMV6h3ZBM&_nc_ohc=kl0hPsUDWi4Q7kNvwGiO9UY&_nc_oc=AdlB_6S2DFIb-AUFhtY1845ActX2ZONDoW69kUkxTxM8uaLgtg4wQ6EFIJ4iSejTyLA21gdbM6GWXPNCbuMtHx03&_nc_zt=23&_nc_ht=scontent.fmnl8-5.fna&_nc_gid=3jKjU7maL5Z0etgZG_SifQ&oh=00_AfiwCF7J1vYD_ZGdUJHxiFms4zwMZWhMOpv7XUAiZ32GmA&oe=6930C90A",
-            "https://scontent.fmnl8-5.fna.fbcdn.net/v/t39.30808-6/591366450_122134251374964084_2588849242415026046_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFlTpcGBOo8kB3M0yHNy-lcs0O-CMv8MCGzQ74Iy_wwIT_S8hORt7THHwQd1g4MVglBCghVbq8WqxElqMkxLusg&_nc_ohc=5TvzR0m-xmQQ7kNvwHl4m5H&_nc_oc=Adlzukcyh3BhXU8ukiPuOzINGOlBILAQokZ_xFzgLSb1siD8QCtppps551ajGpVA7IVg4TTegxm_B_m86thUBlHt&_nc_zt=23&_nc_ht=scontent.fmnl8-5.fna&_nc_gid=Rb3Wr4oirV6Nu-86yN_OdQ&oh=00_AfgxTseNX0UhzRzCHI7C3Eo194ZYyBkOq5ZyjJHzQnKh2g&oe=6930DED7",
-             "https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/591979387_122134322126964084_1362008729346312194_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGnAbA1HZ--q9IUNVD-PAkIVlN-MNiJ5J5WU34w2InknnP3Q9moJrGZZTFRsKNPkE5M0JIDiQQC_-R_q3VZnAfO&_nc_ohc=EkbMkZpyfwYQ7kNvwHv5Cie&_nc_oc=AdkW02Zjr8MpCUQg2mNl85t2QpuOV4A39VgXA6eww8r19YsdOxlVntHIDkfYMy-eoEkNswHcnNpR9yF0_5Q_GlrX&_nc_zt=23&_nc_ht=scontent.fmnl8-3.fna&_nc_gid=BDjK5OX91pJvQ84zQXyg5w&oh=00_AfgPhJY6B3wJ9EkrTjZseWumAuNoip057XY7LLsomv-_5A&oe=6930E068",
-             "https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/586338131_122134322180964084_672759835841845786_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHa3xg3vvEO9YYH622YCz5xVE0hPCnwlolUTSE8KfCWiROkBIPGqprpxjY6j3ZPpOtee5t9GJrCbGjI1qKu-Tjy&_nc_ohc=HfX8EUFJWEMQ7kNvwE8QK52&_nc_oc=AdkMorfELdr8uHb0BQxdiECrknzoipiV16mRCzF9Nal4ghu3GtW8Mds0dra4ND4Bnb5juKDVf8cE4LKxTa4DOhHC&_nc_zt=23&_nc_ht=scontent.fmnl8-3.fna&_nc_gid=srSnJOu7ttBu0Mzb_uFz8g&oh=00_AfhZaBXKr1-iDrY6phdi_cNY4N7rq0uaHKtwco-FijEnCQ&oe=6930E27F",
-             "https://scontent.fmnl8-5.fna.fbcdn.net/v/t39.30808-6/590175706_122134322228964084_2828778646853989254_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGsBXlDBSIHRxkYzfbFZpgctJrC-l8lX9W0msL6XyVf1TIPf_aTEinMDrdnr-wc-hXXQpPQMCKlAkvlWV7epgOZ&_nc_ohc=cUszXp5Fs2YQ7kNvwEjkb78&_nc_oc=AdnCb12j8ZhHUjFrtms1UORh6tyUGHGJZpB_kOzuRBEAsEHZqwZ-6NtgJbhTF3vTNQb0FNgWOR56YhqOvHHtjTdb&_nc_zt=23&_nc_ht=scontent.fmnl8-5.fna&_nc_gid=LkbMD3CYjksKGjY6QIU1JQ&oh=00_Afj5x9xJ7eo0S0fkrgIJ9L8BmSH7JR3yOCE6woA3Ps8EZw&oe=6930E24A"
+            "assets/asset-pack-1.jpg", 
+            "assets/asset-pack-2.jpg", 
+            "assets/asset-pack-3.jpg",
+            "assets/asset-pack-4.jpg"
           ],
-          description: "Collection of rigs, PBR textures and props for environment kits and quick prototyping."
+          description: "Collection of rigs, PBR textures, and props for environment kits and quick prototyping."
         },
         "tusok-tusok": {
           title: "Tusok-Tusok",
-          role: "Solo Prototypes",
-          year: "Ongoing",
+          role: "Prototyper",
+          year: "2023",
           tools: "Unity, C#",
           gallery: [
-            "https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/591054018_122134250870964084_7595009182904073407_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeED-ih_8JppZbSCNwp6AnRm1MlZwlcPKzbUyVnCVw8rNsrf-Xpibk1rKOHhcRn4m2Z42nB2Rj5_sNYbmPm1onL_&_nc_ohc=-3fpRvq8chAQ7kNvwFQs6Hg&_nc_oc=AdnzX1wo4gT88TeEll3EEhP-j1jTzt09vvcnyg8540Wju86aW6xGiWMGaUxkQ2UdKPMq1g7ycx3KOv93Ih2luMcH&_nc_zt=23&_nc_ht=scontent.fmnl8-3.fna&_nc_gid=3Mouur0ID7wiPh63HtfBQg&oh=00_Afjh4ndMUBFqJX8zRXPPG2VBnkV8nNU7JmLm4ul4iTslGg&oe=6930E5EC",
-            "https://scontent.fmnl8-1.fna.fbcdn.net/v/t39.30808-6/590788278_122134310762964084_7470106967775241301_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFwO8ijtWEbS8oK_UYcGCNdZ6z8EUx_9_pnrPwRTH_3-lXBiOCs_O-YpwRtLQoO_b310B_FNAGUrVJLO5S02URj&_nc_ohc=PfVgwKzdtvsQ7kNvwENjLg_&_nc_oc=AdlR-neX5D8l40UGgdRghvb8EbYjOTFaV3MKY8909UB_9c4RURNMMId4EZDGsXd7Ph972m83jfYyjYaSKHuXOb0u&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&_nc_gid=l0L1fvnAPuWRZRz9xNmuzQ&oh=00_Afg04gNE5pkvWw9JcneF2_cCDrTZE3BFnz4CzNIE_hINQQ&oe=6930B6E7",
-            "https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/591702144_122134310804964084_7945406889851360634_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGFQkPoknqos1AxB82jsG7lAH-cKvbX7_kAf5wq9tfv-a8A_et8E_p7bBdRyLbtsUroxb9TvY0tDvNZkKdezwm_&_nc_ohc=lxlW98BJ1oIQ7kNvwFSr4ky&_nc_oc=AdkKVMO_dzj4vXsMwJmsCF_SFev-Bi81pl3GuJKc8AkSl49cRCNWP3BNkpdWn9d8Qid9BeuuiU8F63VpVmuw67hz&_nc_zt=23&_nc_ht=scontent.fmnl8-3.fna&_nc_gid=KITFecakIPFnOz69Fyr6PQ&oh=00_Afh_b6zmEe0UFjMLaePN73g8AfBD61SgvrR1egyUDgUB6Q&oe=6930C920"
+            "assets/tusok-tusok-1.jpg", 
+            "assets/tusok-tusok-2.jpg", 
+            "assets/tusok-tusok-3.jpg",
+            "assets/tusok-tusok-4.jpg"
           ],
           description: "Small Unity prototypes exploring narrative tools, lighting setups and locomotion mechanics."
-          },
+        },
         "2d-art": {
-          title: "2D-art",
-          role: "Solo Prototypes",
-          year: "Ongoing",
-          tools: "Unity, C#",
+          title: "2D Artworks",
+          role: "Digital Painter",
+          year: "Various",
+          tools: "Photoshop, Krita",
           gallery: [
-            "https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/591335132_122134331468964084_514632560870516658_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEDS0yUs_mvpJo8nDnGGcbEk9pVXwziS1aT2lVfDOJLVvv7BfJJJewNP2wGcV2Xm8U0lIjw_ROI1IKiPxrxzP1-&_nc_ohc=KfQ4s3RT__MQ7kNvwHR-st1&_nc_oc=AdkeXXvzBWsPEq-8VgEp9l-2U_TE9LtloQUgymvY2iyrSVhhheTrdu_FjByn6VKioPXWvAFtX1lR1c7ZWZgIqoBy&_nc_zt=23&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=OVaNt5KP9bctHTudJfrfHg&oh=00_AfjkWIUCSl2XjuD57t4PdIptywIN_UiKxm_pAofVTkpIZg&oe=6930F72F",
-            "https://scontent.fmnl8-1.fna.fbcdn.net/v/t39.30808-6/590231223_122134331420964084_7208198675062575811_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHnmLklebMt05Ovl-G_WyDCxJONctD_6yvEk41y0P_rK7RI2wh74Nw83Uc2aEHLNBz5Y9fmr0jeCUlBDAt_w4nu&_nc_ohc=-6zwCz2befkQ7kNvwH-wylj&_nc_oc=AdkoAQkk9Z5PmJHfG9RC6ExTgRrRMrjcfpP9lj_aAbk3RbEmYiMZPu4dQTFqiwEOm0IBrKRoCGl-apCI4Ik61bzy&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&_nc_gid=coYlxwohW-sqzDIIhrareA&oh=00_Afgu4JijUsaScV4RJuC3fQRol4LQe7hGKnEElCWEK5csYg&oe=6930EDF0",
-            "https://scontent.fmnl8-6.fna.fbcdn.net/v/t39.30808-6/591263078_122134331366964084_210978558483566232_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHWIspTpZRq8gIQlKC6g3FdBWyMxF-ygKMFbIzEX7KAox3ZWeXfAeSh8zgYx5j-sfeZgZSi7xozAcLzwjFwQ3vy&_nc_ohc=skfviFeFH1wQ7kNvwEKvYRc&_nc_oc=AdmKr6CuLor6g4yA9V8WQ_UeAWpkS9KmoiXZNOZgwF3FX6pvsVO-Of8nUDJQo20GDPVNbJKP1ThAaKWT5hREiwpL&_nc_zt=23&_nc_ht=scontent.fmnl8-6.fna&_nc_gid=znkXT9tc-T0H3APcB79aLQ&oh=00_Afi8hE4ZW6gDNapn2WyrQjQEZd3_Bs6KggVgvoW9g6KTow&oe=693107D2",
-             "https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/593095871_122134331312964084_755852893808472588_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGjw3q8uuFbCbY_DeaYuNFy84eobwUB5aDzh6hvBQHloFebZ2ZEA9Yyd_SGkXmX61RthsFrmkagIHNewfkirar1&_nc_ohc=QqKjQynGo80Q7kNvwF7YsWS&_nc_oc=AdkkP2lR4Kc50804XRa3S8Vox885kFXgAuoWKrXLnrNy0f8U-xKCWtT2ZpSAxzmxV3Eivb3qG--HyykC4jwhaE_H&_nc_zt=23&_nc_ht=scontent.fmnl8-3.fna&_nc_gid=EgKJOiDMlGSYX4rV_MQfIA&oh=00_Afid2N-hOpXgqLlp5rADFoOIvIxlnl9B0IrcgTGz_W1ELQ&oe=6930FBF6",
-             "https://scontent.fmnl8-1.fna.fbcdn.net/v/t39.30808-6/591711552_122134331258964084_3497686483037603674_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGWAfk9aZPIszPUhQm8H-_9597rKqf_0Cjn3usqp__QKMZRFq_vlWtHJrNOCaLGdQlqra5616dNu84BD4vHASER&_nc_ohc=HM6HEADPMzkQ7kNvwER_nPU&_nc_oc=AdmQ3n6LArdopGnaHC65Cu9aOqAp8RADJoOPy46BrvjKfDsKrKTRbVYqpFDzgz2FvjOgiXA2s-0ko5xVcgnlSYhg&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&_nc_gid=aPUX_wvRZVMWTJ7oCmox6A&oh=00_AfhIUD1R1ju_gkHSGE-iXB8IFnAiU3agey14Fuy5KHgNUQ&oe=69311013",
-             "https://scontent.fmnl8-6.fna.fbcdn.net/v/t39.30808-6/591501072_122134331210964084_6983494944423734661_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE506uhpszQCUfBIOnCP0RAqAV4X5GiTlCoBXhfkaJOUDxZq-7KEZFf57vL7PhdVdZqx05LR3iW6uDSg_IoVPpe&_nc_ohc=eXszC84wXqwQ7kNvwHT4XqS&_nc_oc=AdkFEo1oyWWKfzdYNIDZZpQGB0e_4ALWCQga33jSv7_mk64_c9nM8rcH_FtCOUgLBf5cXU7QsH78dpDghl0y70ov&_nc_zt=23&_nc_ht=scontent.fmnl8-6.fna&_nc_gid=KaKzjgY7kc8jlJzfVvuuAA&oh=00_AfiwReDyW5Aa5Rh7BJyYGyvsddCxWVjH5BA7FCFwKJgEjA&oe=6930F2ED",
-             "https://scontent.fmnl8-4.fna.fbcdn.net/v/t39.30808-6/589552500_122134331162964084_6877480073124851436_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGG3qEzxPszXytmfEC1gxfrqCcn6na7y7CoJyfqdrvLsAUMvavAU9MLJZUbErQJvWKXCC2pgGq6_AW_1XaOwcGo&_nc_ohc=LUa9kTW8Wa0Q7kNvwGkENMo&_nc_oc=Adm21hmRs_6v4h8JuVYKY6E0Gu75WBf1haoFJ5QAUu6MXoCWhZp5ppEiUZrVXKB7uAbzG486Duc8303Cv_TWxOj-&_nc_zt=23&_nc_ht=scontent.fmnl8-4.fna&_nc_gid=1WRyIfJYKQb0wRp3KbHKSw&oh=00_AfifXu7CVMePNKzek10xh8li5jOmpFIvYML9LMN4iaAigg&oe=69311117",
-             "https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/591744576_122134331690964084_7109276414770111923_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFUduX2VszqHhmQifB_ygUpsTt6hI3fN52xO3qEjd83naHCBukE1iY1Q3mGaDMoRxQuxwzFWugmviQmailyABlr&_nc_ohc=4vyDDEp26ocQ7kNvwFdz4rX&_nc_oc=AdkAnFwLg_COJOJDLUwO2danZm4JQB2Ma37C7mDl6zPZbPhb3zfsfRPX9PlnRHr9LnXmNljFp7op3VIEkSLAh084&_nc_zt=23&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=8lUKm8IY928vTHzJup7nmA&oh=00_AfgFvxkoptjTIBquvd7oT1zEBM0Aq0Z1SmWIuDgZY9_Skw&oe=6931043F",
-             "https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/590629678_122134331624964084_1604725652175277404_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGy47pJvCGTmnPwmBZIbVYrwHuA70508-nAe4DvTnTz6amEforXkfDLyEy-6mxKPBeatVD6ZC5ODa5VxkixFjgT&_nc_ohc=bzJ4EpU-hhsQ7kNvwF0w2zl&_nc_oc=AdkFY8KlcpdBhMgOoqwOLsvwX2wiqOdJ1uLX6nMqmPWr51iT72QbqjyU9ugxZqYtoAdGUdAK7pnEJe_S7td990LZ&_nc_zt=23&_nc_ht=scontent.fmnl8-3.fna&_nc_gid=jVlUtYbqtKXLcf4Bd41-5g&oh=00_AfgvFdcMEx0FBlsZbzhe2JA2okkDU-pW_CpvsWx6Ig5v0g&oe=6930DFB0",
-             "https://scontent.fmnl8-1.fna.fbcdn.net/v/t39.30808-6/593101248_122134331012964084_671332353748915560_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEATAla-gVyVwUAZW9QI2ac2P9q4H36Vs3Y_2rgffpWzYix1WjFaxpMR3JIUAHC7K6YTPb383Zs4ej6EHPjvZpr&_nc_ohc=KDHehLN9HSIQ7kNvwEkceql&_nc_oc=AdlT8kkgyQubS6caDK1QauaoPOIeO3JuNMI2cZezHwKQVS0uCASDCWJJxVeN9fS86QXIqw6FAq-Rh-ztRbE8srIy&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&_nc_gid=aNjFapIuhlcFglzhZYpzEA&oh=00_Afj6lnCMjvfrjdowREglRJeE4dqll9Ca0EC4Bse7CINYHQ&oe=6931122C",
-             "https://scontent.fmnl8-4.fna.fbcdn.net/v/t39.30808-6/592583596_122134330862964084_9041453404286561643_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEv4Mq43ymgwpZCcpAo7zXJqXIbSMpsBK2pchtIymwEreMp031QSW2W1T6xKAthzXDCNiuCT8lkfy7SsIQD4EtS&_nc_ohc=0qj3QNTcr3AQ7kNvwFqIERC&_nc_oc=Adlx4rN3Ajak_3MKYMt1_VpFwMta9GmlJNWjfDHxAXX76QTdqDOp4Rt-JONh1QHuw_hvOJTiIhCe0EQBTrG-eRmq&_nc_zt=23&_nc_ht=scontent.fmnl8-4.fna&_nc_gid=mhYGtZkaDCLzL1nCCmenPA&oh=00_AfhCzeq-LjSFtVEO-lOyysOPYy4gAmoiI1CO7-7PuAFRnA&oe=69310764"
+            "assets/2d-art-1.jpg", 
+            "assets/2d-art-2.jpg", 
+            "assets/2d-art-3.jpg",
+            "assets/2d-art-4.jpg"
           ],
-          description: "Small Unity prototypes exploring narrative tools, lighting setups and locomotion mechanics."
-           },
-       "animation": {
-  title: "Animations",
-  role: "Solo Prototypes",
-  year: "Ongoing",
-  tools: "Unity, C#",
-  videos: [
-    "https://youtu.be/RCvxVEeT-0U?si=m6loYb6a25EPV22k",
-    "https://www.youtube.com/embed/VIDEO_ID_2"
-  ],
-  description: "Small Unity prototypes exploring narrative tools, lighting setups and locomotion mechanics."
-}
-        
+          description: "A collection of digital paintings focusing on character concepts, stylized environments, and mood pieces."
+        },
+        "animation": {
+          title: "Animations",
+          role: "Animator",
+          year: "Various",
+          tools: "Blender, Unity",
+          gallery: [
+            "assets/animation-1.jpg", 
+            "assets/animation-2.jpg", 
+            "assets/animation-3.jpg",
+            "assets/animation-4.jpg"
+          ],
+          description: "Short clips and rigging tests, showcasing character movement and environmental effects."
+        }
       };
 
+      // --- MODAL LOGIC ---
       const modal = document.getElementById('project-modal');
-      const modalImage = document.getElementById('modal-image');
-      const modalTitle = document.getElementById('modal-title');
-      const modalRole = document.getElementById('modal-role');
-      const modalYear = document.getElementById('modal-year');
-      const modalTools = document.getElementById('modal-tools');
-      const modalDesc = document.getElementById('modal-desc');
-      const modalGallery = document.getElementById('modal-gallery');
+      const mTitle = document.getElementById('modal-title');
+      const mRole = document.getElementById('modal-role');
+      const mYear = document.getElementById('modal-year');
+      const mTools = document.getElementById('modal-tools');
+      const mDesc = document.getElementById('modal-desc');
+      const mImage = document.getElementById('modal-image');
+      const mGallery = document.getElementById('modal-gallery');
+      const cards = document.querySelectorAll('.card');
+      const modalClose = modal.querySelector('.modal-close');
+      const modalOverlay = modal.querySelector('.modal-overlay');
 
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
 
-      let lastFocused = null;
-      let currentIndex = 0;
-      let currentGallery = [];
+      function openModal(projectId) {
+        const p = projects[projectId];
+        if (!p) return;
 
-      function buildGallery(gallery, initialIndex = 0){
-        modalGallery.innerHTML = '';
-        currentGallery = (gallery || []).slice();
-        currentIndex = Math.max(0, Math.min(initialIndex, currentGallery.length - 1));
-        currentGallery.forEach((src, i) => {
-          const btn = document.createElement('button');
-          btn.className = 'modal-thumb';
-          btn.type = 'button';
-          btn.setAttribute('aria-label', 'Image ' + (i+1));
-          btn.setAttribute('data-idx', i);
-          if(i === currentIndex) btn.setAttribute('aria-selected', 'true');
-          const im = document.createElement('img');
-          im.src = src;
-          im.alt = (modalTitle.textContent || '') + ' image ' + (i+1);
-          btn.appendChild(im);
-          btn.addEventListener('click', ()=> {
-            setMainImage(i);
-            btn.focus();
+        mTitle.textContent = p.title;
+        mRole.textContent = p.role;
+        mYear.textContent = p.year;
+        mTools.textContent = p.tools;
+        mDesc.innerHTML = `<p>${p.description}</p>`; // Use innerHTML for description just in case of formatting
+
+        // Reset Gallery
+        mGallery.innerHTML = '';
+        
+        if (p.gallery && p.gallery.length > 0) {
+          mImage.src = p.gallery[0];
+          mImage.alt = `${p.title} - Main Image`;
+
+          p.gallery.forEach((imgSrc, index) => {
+            const thumb = document.createElement('div');
+            thumb.className = 'modal-thumb';
+            if(index === 0) thumb.setAttribute('aria-selected', 'true');
+            
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = `${p.title} - Screenshot ${index + 1}`;
+            
+            thumb.appendChild(img);
+            thumb.onclick = () => {
+              mImage.src = imgSrc;
+              mImage.alt = `${p.title} - Main Image`;
+              document.querySelectorAll('.modal-thumb').forEach(t => t.removeAttribute('aria-selected'));
+              thumb.setAttribute('aria-selected', 'true');
+            };
+            mGallery.appendChild(thumb);
           });
-          // double-click or Ctrl+Enter opens lightbox from thumbnail
-          btn.addEventListener('dblclick', ()=> openLightbox(src, modalTitle.textContent + ' image ' + (i+1)));
-          btn.addEventListener('keydown', (e)=> {
-            if((e.key === 'Enter' && e.ctrlKey) || e.key === ' '){
-              e.preventDefault();
-              openLightbox(src, modalTitle.textContent + ' image ' + (i+1));
-            }
-          });
-          modalGallery.appendChild(btn);
-        });
-        setMainImage(currentIndex);
-      }
+        }
 
-      function setMainImage(index){
-        if(!currentGallery.length) return;
-        index = Math.max(0, Math.min(index, currentGallery.length - 1));
-        currentIndex = index;
-        modalImage.src = currentGallery[index];
-        modalImage.alt = (modalTitle.textContent || '') + ' preview ' + (index+1);
-        modalGallery.querySelectorAll('.modal-thumb').forEach((t)=>{
-          t.setAttribute('aria-selected', t.dataset.idx === String(index) ? 'true' : 'false');
-        });
-      }
-
-      function openModal(id){
-        const data = projects[id];
-        if(!data) return;
-        modalTitle.textContent = data.title;
-        modalRole.textContent = data.role;
-        modalYear.textContent = data.year;
-        modalTools.textContent = data.tools;
-        modalDesc.textContent = data.description;
-        buildGallery(data.gallery || [data.image || 'assets/placeholder.png'], 0);
         modal.classList.add('open');
-        modal.setAttribute('aria-hidden','false');
-        lastFocused = document.activeElement;
-        const closeBtn = modal.querySelector('.modal-close');
-        if(closeBtn) closeBtn.focus();
+        modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
-        document.addEventListener('keydown', onKeyDown);
       }
 
-      function closeModal(){
+      function closeModal() {
         modal.classList.remove('open');
-        modal.setAttribute('aria-hidden','true');
+        modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
-        if(lastFocused && lastFocused.focus) lastFocused.focus();
-        document.removeEventListener('keydown', onKeyDown);
-        closeLightbox();
       }
 
-      function onKeyDown(e){
-        if(e.key === 'Escape') return closeModal();
-        if(e.key === 'ArrowRight') { setMainImage(currentIndex + 1); }
-        if(e.key === 'ArrowLeft') { setMainImage(currentIndex - 1); }
-        if(e.key === 'Tab'){
-          const focusables = modal.querySelectorAll('button, a[href], input, textarea, [tabindex]:not([tabindex="-1"])');
-          if(!focusables.length) return;
-          const first = focusables[0], last = focusables[focusables.length-1];
-          if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
-          else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
-        }
-      }
-
-      // attach handlers to cards
-      document.querySelectorAll('.grid .card').forEach(card=>{
-        card.addEventListener('click', function(e){
-          e.preventDefault();
-          const id = card.dataset.id;
-          if(id) openModal(id);
+      cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          // Check if the click target is the anchor button/link inside the card
+          if (e.target.closest('a')) return;
+          openModal(card.dataset.id);
         });
-        card.addEventListener('keydown', function(e){
-          if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); const id = card.dataset.id; if(id) openModal(id); }
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openModal(card.dataset.id);
+          }
         });
       });
 
-      // close actions
-      modal.querySelector('[data-close]')?.addEventListener('click', closeModal);
-      modal.querySelector('.modal-close')?.addEventListener('click', closeModal);
-      modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+      modalClose.addEventListener('click', closeModal);
+      modalOverlay.addEventListener('click', closeModal);
 
-      /* LIGHTBOX (enlarged image) */
-      function openLightbox(src, alt = ''){
-        if(!src) return;
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (lightbox.classList.contains('open')) {
+            closeLightbox();
+          } else if (modal.classList.contains('open')) {
+            closeModal();
+          }
+        }
+      });
+
+      // --- LIGHTBOX LOGIC ---
+      function openLightbox(src) {
         lightboxImg.src = src;
-        lightboxImg.alt = alt || '';
         lightbox.classList.add('open');
-        lightbox.setAttribute('aria-hidden','false');
-        document.addEventListener('keydown', onLightboxKey);
+        lightbox.setAttribute('aria-hidden', 'false');
       }
-      function closeLightbox(){
-        if(!lightbox.classList.contains('open')) return;
+
+      function closeLightbox() {
         lightbox.classList.remove('open');
-        lightbox.setAttribute('aria-hidden','true');
-        lightboxImg.src = '';
-        document.removeEventListener('keydown', onLightboxKey);
-      }
-      function onLightboxKey(e){
-        if(e.key === 'Escape') return closeLightbox();
-        if(e.key === 'ArrowRight'){ setMainImage(currentIndex + 1); lightboxImg.src = currentGallery[currentIndex]; }
-        if(e.key === 'ArrowLeft'){ setMainImage(currentIndex - 1); lightboxImg.src = currentGallery[currentIndex]; }
+        lightbox.setAttribute('aria-hidden', 'true');
       }
 
-      // click main modal image opens lightbox
-      modalImage.addEventListener('click', ()=> {
-        if(modal.classList.contains('open')) openLightbox(modalImage.src, modalImage.alt);
+      mImage.addEventListener('click', () => {
+        openLightbox(mImage.src);
       });
 
-      // clicking a thumbnail sets main image (dblclick opens lightbox handled in buildGallery)
-      modalGallery.addEventListener('click', (e)=> {
-        const btn = e.target.closest('.modal-thumb');
-        if(!btn) return;
-        const idx = Number(btn.dataset.idx || 0);
-        setMainImage(idx);
-      });
+      lightbox.addEventListener('click', closeLightbox);
 
-      // close lightbox on click overlay or image
-      lightbox.addEventListener('click', (e)=> {
-        if(e.target === lightbox || e.target === lightboxImg) closeLightbox();
-      });
-
-      // ensure lightbox closes when modal closes
-      modal.querySelector('.modal-close')?.addEventListener('click', ()=>{ closeLightbox(); closeModal(); });
-      modal.querySelector('[data-close]')?.addEventListener('click', ()=>{ closeLightbox(); closeModal(); });
-
-    })();
-  </script>
-
-  <!-- Sword cursor behavior: follow pointer + dblclick swing -->
-  <script>
-    (function(){
+      // --- CURSOR LOGIC ---
       const sword = document.querySelector('.sword');
-      if(!sword) return;
-      const W = 64, H = 64;
+      let timeout;
 
-      // track pointer; offset so blade tip aligns to pointer
-      function onMove(e){
-        const left = (e.clientX || (e.touches && e.touches[0].clientX) || 0) - W/2;
-        const top  = (e.clientY || (e.touches && e.touches[0].clientY) || 0) - H*0.14;
-        sword.style.left = left + 'px';
-        sword.style.top  = top  + 'px';
-      }
-
-      // enable on mouse move
-      window.addEventListener('mousemove', onMove, { passive: true });
-
-      // double click or double tap to swing
-      let lastTap = 0;
-      function triggerSwing(){
-        sword.classList.remove('swing');
-        void sword.offsetWidth;
-        sword.classList.add('swing');
-      }
-
-      document.addEventListener('dblclick', (e) => {
-        triggerSwing();
+      document.addEventListener('mousemove', (e) => {
+        sword.style.left = e.clientX + 'px';
+        sword.style.top = e.clientY + 'px';
       });
 
-      // simple double-tap detection for touch devices (also prevents permanent hiding)
-      document.addEventListener('touchend', function(e){
-        const now = Date.now();
-        const dt = now - lastTap;
-        if(dt < 300 && dt > 30){
-          triggerSwing();
-        }
-        lastTap = now;
-      }, { passive: true });
+      document.addEventListener('click', () => {
+        sword.classList.add('swing');
+        if (timeout) clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          sword.classList.remove('swing');
+        }, 500);
+      });
 
-      sword.addEventListener('animationend', ()=> sword.classList.remove('swing'));
-
-      // on first touch, hide sword and restore native cursor for touch UX
-      function onFirstTouch(){
-        sword.style.display = 'none';
-        document.body.style.cursor = '';
-        window.removeEventListener('mousemove', onMove);
-      }
-      window.addEventListener('touchstart', onFirstTouch, { once: true });
+      // --- INITIAL BG IMAGE FIX ---
+      // Fix for the background image path which was previously relative to a subfolder
+      document.body.style.backgroundImage = document.body.style.backgroundImage.replace('../Homepage_files/480301141_9279944875455896_5586049436356959454_n.jpg', 'assets/bg-space.jpg');
+      
     })();
   </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
