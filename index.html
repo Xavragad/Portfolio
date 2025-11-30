@@ -130,8 +130,8 @@
     /* --- Sword cursor styles --- */
     /* hide native cursor; show sword sprite */
     body { cursor: none; }
-    /* interactive elements keep native pointer for UX */
-    a, button, input, textarea, .card { cursor: pointer; }
+    /* IMPORTANT FIX: Force interactive elements to also hide the default pointer */
+    a, button, input, textarea, .card { cursor: none; } 
 
     .sword {
       position: fixed;
@@ -187,7 +187,7 @@
 
   <header role="banner" aria-label="Intro crest">
     <div class="crest" aria-hidden="true">
-      <img src="assets/pfp.jpg" alt="Angelo Paa Profile Picture" />
+      <img src="assets/roneil.png" alt="Angelo Paa Profile Picture" />
     </div>
     <div class="hero-meta">
       <h1>Angelo Roneil C. Paa</h1>
@@ -216,7 +216,7 @@
           </div>
 
           <div class="card" role="listitem" tabindex="0" data-id="minatamis" aria-label="Open Minatamis project">
-            <div class="thumb"><img src="assets/minatamis-thumb.jpg" alt="Minatamis — preview"></div>
+            <div class="thumb"><img src="assets/Minatamis.png" alt="Minatamis — preview"></div>
             <h4>Minatamis — Lead Artist (2025)</h4>
             <p>A 3D Filipino dessert simulator game for pc.</p>
           </div>
@@ -321,12 +321,10 @@
           year: "2019",
           tools: "Blender, Substance, Photoshop",
           gallery: [
-            // UPDATED: Local paths
             "assets/darkons-1.jpg", 
             "assets/darkons-2.jpg", 
             "assets/darkons-3.jpg",
             "assets/darkons-4.jpg"
-
           ],
           description: "Environment props and textures; contributed mood pieces and banners used during the event."
         },
@@ -336,7 +334,6 @@
           year: "2025",
           tools: "Blender, Unity, Substance",
           gallery: [
-            // UPDATED: Local paths
             "assets/minatamis-1.jpg", 
             "assets/minatamis-2.jpg", 
             "assets/minatamis-3.jpg",
@@ -345,7 +342,6 @@
             "assets/minatamis-6.jpg",
             "assets/minatamis-7.jpg",
             "assets/minatamis-8.jpg"
-
           ],
           description: "Led art direction, asset pipeline and level visuals. Focus on readable silhouette and color language."
         },
@@ -355,7 +351,6 @@
           year: "2025",
           tools: "Node, C#, Docker",
           gallery: [
-            // UPDATED: Local paths
             "assets/kung-fury-1.jpg", 
             "assets/kung-fury-2.jpg", 
             "assets/kung-fury-3.jpg",
@@ -369,12 +364,10 @@
           year: "2025",
           tools: "React, Node, SQL",
           gallery: [
-            // UPDATED: Local paths
             "assets/pixel-z-1.jpg", 
             "assets/pixel-z-2.jpg", 
             "assets/pixel-z-3.jpg",
             "assets/pixel-z-4.jpg"
-            // The rest of the array was cut off, using placeholder paths
           ],
           description: "A post-apocalyptic pixel game."
         },
